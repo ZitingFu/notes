@@ -1,4 +1,0 @@
-packagename:  com.fu.test    
-keystore :    android.keystore 文件
-password: 123456
-aliasname: android.keystore
