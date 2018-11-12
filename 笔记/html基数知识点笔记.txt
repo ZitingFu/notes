@@ -1,0 +1,150 @@
+HTML标签:	
+	html
+	head  网页头部
+	body  网页主体
+	title 网页标题
+
+	h1~h6 标题
+                em     文本字体变斜
+               strong 文本字体变粗 
+            <br />  换下一行  
+            <hr />   有一条水平线
+               &nbsp;  空格
+                   &gt;   大于号(>)	
+	   &lt;   小于号(<)	
+              &quot;    引号(")
+              &copy;    版权符号
+ img 图像：
+    	src 链接地址   路径
+                   <img src="文件夹/jpg"alt="显示错误" height="200" title="鼠标上去显示的字">
+                    <a href="#   名字 " name="  名字">点我到b</a>
+	p     段落
+	a     超链接
+		href 链接地址
+		target 打开方式  _blank 新标签打开
+	hr    水平线
+HTML(超文本标记语言)
+语法：<标签名 属性名="属性值" 属性名="属性值">.....</标签名>
+
+table  表格
+		border 边框
+		width  宽度  单位%
+		!cellspacing 单元格外边距
+		cellpadding  单元格内填充
+		align  表格水平方向相对于父级元素的位置  left || center || right
+thead  表头
+tbody  表格主体
+tr     行
+		align  单元格内容水平对齐方式
+td     单元格
+		align  单元格内容水平对齐方式
+		colspan 可允许单元格横框的列数
+		rowspan .....行数
+th     标题单元格	
+
+表单
+
+	input
+		type
+			text 文本框
+			password 密码框
+			radio   单选按钮
+			checkbox 复选按钮
+			button   按钮
+	textarea 文本域
+	(HTML5)button
+	form 表单
+		action 目标
+		method  方法
+	select 下拉选择菜单
+	option 选择项
+
+	ol   有序列表
+	ul   无序列表
+	li   列表项
+
+	div	 区域
+	span 区域(不换行)
+
+
+	块级元素与行内元素的区别:
+		块级元素:默认宽度100%,默认独占一行,可以为其设置width,height,margin,padding,border属性
+		p,h1-h6,div,ul,li
+
+		行内内素:默认宽度自动,默认并排显示,不可为其设置上述属性.
+		a,img,strong,span,表单元素
+
+CSS(层叠样式表)
+	选择器{
+		属性名:属性值;
+		属性名:属性值;
+		属性名:属性值;
+		...........
+	}
+	css写入方式:
+		1.内部样式  <style></style>
+		2.外部样式
+		3.行内样式
+	选择器的种类:
+		1.标签选择器 写法：标签名  比如：p
+		2.类选择器  写法:.类名    比如:.orange
+		3.包含选择器 写法:选择器 选择器 
+			比如:.list li
+				 .list .sp
+
+
+	css属性：
+		color(文字颜色):16进制颜色值 || 颜色英文单词 || rgb()
+		font-size(字体大小):数字+单位(px,em,rem,pt)
+		font-weight(字体粗细):数字 || bold(加粗) || normal
+		text-decoration(文本修改):underline(下划线) || none
+		background-color(背景颜色)
+		list-style(列表样式):none(没有)
+		line-height(行高):数字+单位(px,em,rem,pt)
+		width(宽度):数字+单位(px || %)
+		height(高度)
+		padding(内填充)
+		border(外边框):粗细(数字+单位px) 样式(solid) 颜色
+		margin(外边距)
+		float(浮动):left || right || none
+		text-align(文本水平对齐方式):left || right || center
+		background-image(背景图片):url(路径)
+		background-repeat(背景图片重复方式):
+			repeat(重复) || no-repeat(不重复) 
+			repeat-x(水平重复) || repeat-y(垂直重复)
+		background-position(背景图片位置):数字+单位(px || %)
+		border-raiuds(圆角):数字+单位(px ||　%)
+
+CSS盒模型
+	作用:精细的控制页面里的每一个元素在页面里所占的位置
+	计算:内容区+内填充区+外边框区+外边距区的相加之和等于该元素在页面里水平/垂直方向所占的位置.
+
+PS:
+	选取工具 D
+	取消选区 Ctrl+D
+	填充前景色 Alt+Delete
+	填充背景色 Ctrl+Delete
+	渐变工具  G
+	移动工具  V
+		按住alt 移动并复制
+	撤回一步 Ctrl+z
+	撤回多步 Ctrl+Alt+z
+	文字工具 T
+	自由变换 Ctrl+t
+
+网页中常见图片的格式:
+	jpg
+		优势:无损压缩,色彩显示比较丰富
+		劣势:相对于png8文件大小稍大
+		使用场景:写实的照片.
+	png8
+		优势:无损压缩,支持透明色
+		劣势:色彩相对于jpg稍弱
+		使用场景:网站中一般的图片
+	png24
+		优势:无损压缩,支持半透明.
+		劣势:如果png24图片开启半透明模式,那么该图片大小要比jpg还要大.
+		使用场景:需要半透明,或需要透明但出现毛边的图片
+	gif
+		优势:支持动画
+		使用场景:只有在使用动图时才会用到该格式

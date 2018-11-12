@@ -1,0 +1,90 @@
+vue 脚手架
+#项目初始化
+	1.安装vue-cli
+		npm install -g vue-cli
+	1.1 是非安装成功
+	    vue --version	
+	2.初始化项目
+		vue init webpack 项目名称
+	3.进入项目
+		cd 项目名称	
+	4.安装依赖
+		npm install
+	5.启动项目
+		npm run dev	
+
+#项目目录视图
+	index.html:项目根视图
+	APP.vue 是根组件
+	HelloWorld.vue 是我们的子组件
+	
+	.postcssrc.js: postcss配置文件
+	static： 静态文件目录	
+	config： 配置文件(开发配置,服务器配置,生产环境,跨域配置。。。)
+
+#模板语法
+	vue组件：
+		MVVM模式：数据的变化会引起视图的变化(优势)
+		包含三个部分
+			template: 视图
+			script: 逻辑
+			style: 样式
+	Mustache:模板语法
+		表现形式： {{ 语法 }}
+		{{msg}}
+		{{"哈哈"}}
+		{{msg.split('').reverse().join('')}}  单行语句
+		{{"注意：只能存在单行语句"}}
+		{{0<10'对的'：'错的'}}  {{var a = 10}} 、、这个是错误的写法
+	vue 基本指令
+				{g:"<p>他们的区别</p>"}
+			v-html="g":渲染文本  他们的区别
+			v-text="g":渲染文本	 <p>他们的区别</p> 
+				{{g}}:渲染文本	 <p>他们的区别</p> 
+
+			v-bind:绑定(连接视图跟逻辑) 简写为(:)
+				v-bind:class="css"
+				v-bind:title="css"
+				.........
+		
+		条件渲染
+			template 承载容器不会渲染组件
+			v-if="show"  shou:true/false 决定是否呈现出来
+			v-else
+			v-show="show" shou:true/false
+
+			问题：v-if于v-show有什么区别？
+			v-if：条件为true渲染(条件为false不渲染，而且连加载都不加载，在结构中看不到)dom删除或者不删除
+			v-show:不管true或false会被渲染先加载，再在css切换
+			一般来说，v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件很少改变，则使用 v-if 较好。
+
+		列表渲染
+			2.2.0+ 的版本里，当在组件中使用 v-for 时，:key 现在是必须的。
+			v-for(数组) v-for="(i,index) in name" v-bind:key="index"  {{i}}{{index}}下标
+			v-for(对象) v-for="(i) in name" :key="index"  {{i.name}}{{i.age}}
+			v-bind:key="index" 对应元素方便后期寻找
+
+		事件监听
+			v-on:简写方法：@代替v-on
+			methods:
+			事件参数
+			修饰符
+		数组更新检测：
+			变异方法：引起视图的更新
+			替换数组：不会引起视图的更新
+		显示过滤/排序结果:
+			filter
+		计算属性和观察者
+			computed
+			计算属性和message的区别：
+				我们可以将同一函数定义为一个方法而不是一个计算属性。
+				两种方式的最终结果确实是完全相同的。然而，不同的是计算属性是基于它们的依
+				赖进行缓存的。计算属性只有在它的相关依赖发生改变时才会重新求值。
+				这就意味着只要 message 还没有发生改变，多次访问 reversedMessage 计算属性会立即返回之前的计算结果，
+				而不必再次执行函数。
+
+		表单输入与绑定
+			v-model:双向数据绑定(不但可以输入也可以获取，可读可写)
+			watch监听
+			修饰符:lazy,trim,
+

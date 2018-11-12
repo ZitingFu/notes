@@ -1,0 +1,65 @@
+﻿地图 
+	 https://lbs.amap.com/api/javascript-api/guide/abc/load
+验证码  
+	https://007.qq.com/web-access.html?ADTAG=acces.start
+图片上传
+	https://www.alibabacloud.com/help/zh/doc-detail/31927.htm?spm=a2c63.p38356.b99.91.3d2f65f7DV8Nlz
+轮播图移动端 
+	https://www.swiper.com.cn/demo/index.html
+在线测试工具	
+	websocket http://coolaf.com/tool/chattest
+	https://www.easyswoole.com/Manual/2.x/Cn/_book/Sock/websocket.html
+echarts
+	http://echarts.baidu.com/examples/
+Animate.css
+	https://daneden.github.io/animate.css/
+小程序官网
+	https://developers.weixin.qq.com/miniprogram/dev/quickstart/basic/getting-started.html
+coding 文件托管
+	https://coding.net/user
+格林时间戳
+	https://www.jb51.net/article/130271.html
+vue-router
+	https://www.bootcdn.cn/
+git教程
+	https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013760174128707b935b0be6fc4fc6ace66c4f15618f8d000
+弹性盒子
+	http://www.ruanyifeng.com/blog/2015/07/flex-examples.html
+文字垂直居中
+	https://blog.csdn.net/u014607184/article/details/51820508
+HBuilder 
+	https://www.cnblogs.com/jiekzou/p/8119434.html 
+Mui 
+	https://www.cnblogs.com/jiekzou/p/8119434.html
+px
+ 	https://www.68ps.com/
+电脑版oss
+ 	https://market.aliyun.com/products/53690006/cmgj000281.html?spm=5176.10695662.1996646101.searchclickresult.312316b0DagsqN#sku=biaozhunban
+如何安装下载vue脚手架
+	https://segmentfault.com/a/119000001127599
+测试接口	
+	http://jsonplaceholder.typicode.com/
+命令行
+	https://baike.baidu.com/item/%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E7%AC%A6/998728?fr=aladdin
+公司用的git
+	https://coding.net/user
+	https://www.jb51.net/article/126790.htm
+轮播
+	https://www.swiper.com.cn/demo/index.html
+github
+	https://daneden.github.io/animate.css/
+	https://www.jianshu.com/p/8956a9cfa9da
+websocket
+	http://www.ruanyifeng.com/blog/2017/05/websocket.html
+websocket在线测试
+	http://coolaf.com/tool/chattest
+高德地图
+	https://lbs.amap.com/api/javascript-api/guide/abc/load
+多人协作
+	https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013760174128707b935b0be6fc4fc6ace66c4f15618f8d000
+盒模型
+	http://www.css88.com/book/css/properties/user-interface/box-sizing.htm	
+NPM 学习笔记整理	
+	https://segmentfault.com/p/1210000009653830/read
+webpack4	
+	网址：https://www.jianshu.com/p/6712e4e4b8fe

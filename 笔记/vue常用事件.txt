@@ -1,0 +1,99 @@
+
+//html:
+	点击事件：
+		<!-- v-on:click=""     单击-->
+		<!-- v-on:dblclick=""  双击--> 
+
+	鼠标移上事件：	
+		<!-- v-on:mousemove="" 移动鼠标-->
+		<!-- v-on:mousemove.stop -->
+		修饰符：
+			<!-- .stop   	阻止冒泡事件 -->
+			<!-- .once    	只会触发一次 -->
+			<!-- .prevent 	阻止触发事件 -->
+
+	键盘事件：
+		<!-- v-on:keyup="keyup"         键盘抬起触发事件 -->
+		<!-- v-on:keyup.enter="keyup"   回车触发事件-->
+		修饰符：
+			<!-- .enter 回车键触发事件-->
+			<!-- .ctrl  -->
+			<!-- .alt   -->
+			<!-- .shift -->
+			<!-- .meta  -->
+	双向数据绑定：
+		<!--v-model="" 属性绑定到元素上-->  
+	放标签：
+		<!-- v-html=""放标签-->  
+	动态绑定：
+		<!-- v-bind:href=""-->
+		<!-- v-bind:value="" -->
+		<!-- v-bind:class="blue:true,red:true" 添加多个class-->
+			例子：v-on:click="jj = !jj" v-bind:class="{red:jj}"
+	条件判断：		
+		 <!-- v-if -->	
+	两个实例化对象
+	
+// 附加：
+	判断
+		{{ ok ? 'YES' : 'NO' }}	
+		 "fin=!fin,fin2=!fin2"
+	 	{{ if (ok) { return message } }}
+	在html里面定义：
+		ref="name"
+	计算属性
+		{{number1}} 不用()去执行 
+
+
+
+ //js实例化vue对象:
+new Vue({
+	el:"#Vue-app",  //element: 需要获取的元素，一定是html中的根容器
+	data:{          //data: 用于数据储存
+		name:"你好",
+		fuziting:"傅紫婷",
+		href:"https://www.2345.com/?38264-0010",
+		websiteTag:"<a href='https://cn.vuejs.org/v2/guide/'>点击跳转</a>",
+		age:"18",
+		x:0,
+		y:0
+	},
+	computed:{ 			//用于计算 大量,耗时,时使用,改善性能
+		number1(){
+			console.log("aaa")
+			return this.age+this.a
+		},
+		number2(){
+			console.log("bbb")
+			return this.age+this.b
+		}
+	},
+	methods:{       //用于存储各种方法
+		/、、、、、、、、、、、、、、、、、、、、、、、、、、、、、
+
+		this //拿取data里面的值
+		this.$refs.name //拿取html里面的值
+
+		、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、/
+		zao:function(time){
+			return  time+this.fuziting
+		},
+		add:function(inc){
+			this.age += inc
+		},
+		reduce:function(dec){
+			this.age -= dec
+		},
+		updateXY:function(event){
+			this.x=event.clientX
+			this.y=event.clientY
+		},
+		click(){
+			alert(12)
+		},
+		submit(){
+			console.log("你正在输入你的名字")
+		}
+
+	}
+})

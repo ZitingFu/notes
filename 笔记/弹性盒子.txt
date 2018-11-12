@@ -1,0 +1,35 @@
+﻿//弹性盒子
+//附：设置了弹性布局之后，子元素的css中的float, clear, vertical-align 这些属性将失效。http://www.ruanyifeng.com/blog/2015/07/flex-examples.html
+//父级：
+ 	*定义弹性布局（父级上定义）：display: flex;
+
+	如果说内核为webkit 的必须前面加上: -webkit-flex
+
+ 	和我们的全部'float:right'是一样的效果: flex-direction:row-reverse;
+
+ 	和我们的全部'float:left'是一样的效果:flex-direction:row
+
+ 	垂直方向上(排列)：flex-direction:column;
+
+ 	垂直方向上(倒序排列)：flex-direction:column-reverse
+
+ 	*弹性布局中的(换行)：flex-wrap:wrap;
+
+ 	弹性布局中的(不换行)：flex-wrap：nowrap;
+
+ 	*两边不留空隙（平均排列的）:justify-content:space-between;
+
+ 	*居中显示，两边也空有间隙（且是均等的）:justify-content:space-around;
+
+ 	 *****布局常用*****
+ 	 	with:""         //必须设置
+ 	 	height:""       //必须设置
+	 	display: flex;     //盒子
+		flex-wrap: wrap;  //换行
+		align-content: space-between;  //(垂直)两边不留空隙
+		justify-content:space-between	//(水平)两边不留空隙
+	*******************
+
+ // 子级设置：
+ 	里面每一块的长度均匀布局很合适：flex-grow:2; 
+ 	宽度小于父级时有用，大于就按上面的分，不会跑到下一行 with: 

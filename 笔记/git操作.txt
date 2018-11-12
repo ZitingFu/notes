@@ -1,0 +1,10 @@
+﻿//git操作
+	git init 初始化仓库
+	git status 查看全库状态
+	git add -A || 文件名
+	git commit -m "提交"
+	git push
+//版本提交
+	git tag 查看目前版本
+	git tag -a v1.1.4 -m "v1.1.4"
+	git push origin v1.1.4

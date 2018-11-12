@@ -1,0 +1,656 @@
+//移动端布局
+	创建理想视口: <meta name="viewport" content="width=device-width">
+	媒体查询：断点（分辨率临界点）的选择
+
+	  @media (max-width:480px){
+	    //手机独有的样式
+	    body{
+	      ....
+	    }
+	    header{
+	      .....
+	    }
+	  }
+
+	1.完美
+	0-480 小屏幕
+	481-800 中屏幕、
+	801-1400 大屏幕
+	1400+  超大屏幕
+	2.挺完美
+	0-480 小屏幕
+	481-800 中屏幕、
+	801-1400 大屏幕
+
+	/*移动端*/
+	@media (max-width:480px){
+		
+	}
+	/*ip端*/
+	@media screen and (min-width:481px) and (max-width:1204px){
+		
+	}
+	/*pc端*/
+	@media (min-width:1205px){
+		
+	}
+
+//css
+	outline:none; 去掉input默认的框
+
+//字符串的应用(如果不是字符串转为字符串)
+	
+	* 字符串.indexOf(End,Start) 	Start下标开始查找到End下标结束
+	* 字符串.indexOf( ) 			返回的是字符串所对应的下标。
+	* 字符串.indexOf( ) 			没有找到字符串的下标返回-1
+	* 字符串.slice(  ) 				传一个值截取得就是当前位置到最后
+	* 字符串.slice( , +1) 			传入字符串下标，截取起始位置和终止位置。截取得终点位置得+1就是自己想要的位置
+	* 字符串.split("f/=/,")			把字符串从f/=/,开始转化为数组 (把字符串转化成数组)
+
+//数组的方法
+
+	var a = ["傅紫婷","他大爷","不是大爷","二大爷"]
+	* a.push("进去") 				 把"进去"插入到了a数组的最后一个 (向数组后面插入元素)
+	* a.unshift("进去")				把"进去"插入到了a数组的第一个(插入到a的第一个)	
+	* a.pop() 						(删除数组最后一个元素)
+	* a.shift() 					(删除数组的第一个元素)
+	* a.slice()						返回的是{
+										var a = ["傅紫婷","杨喜林","秦明杰","黄翔","郭波","王大伟","袁鹏"] 
+										var b = a.slice(1)
+										console.log(b)返回的是["杨喜林","秦明杰","黄翔","郭波","王大伟","袁鹏"]
+										console.log(a)
+									}
+//移动端
+	* 1.在utf-8下面写
+		<meta name="viewport" content ="width=device-width">
+			css
+	* 2.在css 移动端最大宽度480 @media (max-width:480px){}  @media screen max-width(480px){}
+
+//原生js
+
+	  *	点击事件			
+	  						nade.onclick = function(){}
+		* onclick				
+
+		* bind				$("button").bind({
+							    click:function(){$("p").slideToggle();},
+							    mouseover:function(){$("body").css("background-color","red");},  
+							    mouseout:function(){$("body").css("background-color","#FFFFFF");}  
+ 							 });
+ 		* focus             获得焦点触发事件
+
+ 		* blur              失去焦点触发事件
+
+ 		* change            在某个域被使用或改变时，它会改变颜色。
+
+ 		* dblclick          双击触发该事件
+
+	  * 添加css样式			nade.style.width = " "	nade.style.zIndex = 1
+
+	  * 获取元素宽高	
+				  			document.getElementsByTagName(" ")[0].offsetWidth
+							document.getElementsByTagName(" ")[0].offsetHeight	
+      * Node节点的属性和方法
+      						node.innerHTML = ""
+      						node.className = 
+      						node.value =
+      * DOM节点的查询
+						    getElementById()
+						    getElementsByTagName()
+						    getElementsByClassName()
+	  * 节点的创建          
+	  						document.createElement(arg)
+	  * 节点插入
+	  						父级.insertBefore(arg1,arg2)	把arg1插入到arg2
+	  * 删除节点		
+	  						父级.removeChild(arg)	
+	  * 节点插入             
+	  						a.appendChild(arg)		把arg插入到a的内部结尾之前插入参数对象	
+	  * 节点克隆						
+	  						tim.cloneNode(true)		克隆tim连同内容一起克隆	
+	  * 节点的查找
+	                        nade.parentNode 返回该节点的父级节点
+	                        nade.nextElementSibling 返回下一个兄弟节点
+	                        nade.previousElementSibling 返回上一个兄弟节点
+	                        nade.firstElementChild 返回第一个子节点
+	                        nade.lastElementChild 返回最后一个字节点
+
+	  * 节点类型 nodeType 返回值为Number类型                        
+							1:元素节点
+							3:文本节点
+							8:注释节点
+							9:文档(document对象)节点
+
+      * parseInt(exp) 强制转换为Number类型
+
+	  * 获取节点属性的属性值
+	  						nade.getAttribute(arg)
+	  * 设置节点属性的属性值 
+	 						setAttribute(arg1,arg2)	
+	  * 删除某个属性 
+	  						removeAttribute(arg)	
+
+  	  * 获取浏览器可视区域的宽/高
+  	  						document.documentElement.clientWidth
+  							document.documentElement.clientHeight
+
+  	 * 获取页面顶部滚动条卷去的距离	
+  	 						document.getElementsByTagName("body")[0].scrollTop
+  							document.documentElement.scrollTop	
+
+  	 * onscroll 当页面滚动时触发的事件
+	 * onresize 当浏览器调整可视尺寸时						
+
+  	 * window对象下的事件:当页面加载完成之后执行的事件；
+  	 						window.onload = function(){}	执行时机不同偏晚，会冲突(用addEventListener()方法代替原有绑定事件的写法)							
+//jQuery
+	  * 点击事件			nade.click(function(){	
+							})
+
+	  * 创建节点            $("<p></p>")
+
+	  * 添加css样式         nade.css({ 
+	  							width:12px,height:45px
+	  						})
+	  * 获取元素的宽高
+	  						$("").width/height
+
+	  * 获取浏览器可视区域的宽/高	
+	  						$(document).width()
+							$(document).height()
+
+	  * window对象下的事件：当页面加载完成之后执行的事件							
+	  						$(function(){}) 
+
+	  *	向下遍历          find(selector) eq() children()	
+	  * 向上遍历	      closest(selector) parents() parent()
+	  * 插入元素		  appendTo() append() before() after() insertAfter() inserBefore()
+	  * 克隆节点          clone(includeEvent) 拷贝节点 includeEvent:是否连同事件一起拷贝 Boolean
+
+ //jQuery对象的方法
+	  * addClass(". ") newClass:String 为jQuery对象追加class类型
+
+	  *	removeClass(".") class:String 为jQuery对象删除某个class
+
+	  *	toggleClass()
+
+	  *	eq(index) index:Number 下标 返回jQuery对象集合中第index个元素(jQuery对象)
+
+	  *	html(str) str String类型 可选参数
+	  			传参: JQuery对象的开始标签与结束标签之间的内容设置成str
+	  			不传参:返回jQuery对象的开始标签与结束标签之间的内容
+
+	  *	去掉on源生js事件名(eventFn) eventFn:function 对应的事件处理函数
+	  			注意:在事件处理函数内部,this关键字的指向依然为源生js对象
+
+	  *	fadeIn(speed,callback) 渐显
+
+	  *	fadeOut(speed,callback) 渐隐
+
+	  *	fadeToggle(speed,callback) 渐显/渐隐
+
+	  *	speed 执行时间 Number || String ("fast" || "normal" || "slow")
+
+	  *	callback 可选 回调函数 function
+
+	  *	slideDown() 下拉显示
+
+	  *	slideUp() 收起隐藏
+
+	  *	slideToggle()
+
+	  *	show()
+
+	  *	hide()
+
+	  *	toggle()
+
+	  *	css(styleObject) 操作jquery对象的内部样式
+
+	  *	styleObject:Object 样式列表
+
+	  *	animate(styleObject,time,callback)
+
+	  *	styleObject:Object 样式列表
+
+	  *	time 执行事件 Number
+
+	  *	callback 可选 回调函数
+
+	  *	hasClass(className)  检测jQuery对象是否含有该类名 返回值:true || false
+
+	  *	val() 对应源生js对象里的value属性
+
+	  *	attr(name,value) 设置属性名，属性值
+
+	  *	prop() 设置属性名，属性值隐藏的页面看不到
+
+	  *	remove() 删除
+
+	  *	clone(includeEvent) 拷贝节点 includeEvent:是否连同事件一起拷贝 Boolean
+
+	  *	插入元素
+		  	insertAfter()
+		  	inserBefore()
+		  	append()
+		  	appendTo()
+		  	before()
+		  	after()
+	  *	向上遍历
+
+	    	parent()
+	    	parents()
+	    	closest(selector)逐层向上寻找,直到找到第一个与selector相匹配的元素结束寻找,并将其返回
+	  *	向下遍历
+	        children()
+	        find(selector) selector String 从jQuery对象里面寻找符合selector的jQuery对象
+	        eq()
+	  *	同级遍历
+	  	    siblings()
+	  	    next()
+	  	    nextAll()
+	  	    prev()
+	  	    prevAll()
+	  	    index() 返回元素在父级元素中所在的索引值位置
+	  *	流程控制语句(跳出循环)
+	  *	break 跳出整个循环(while,for,forin) continue 跳出本次循环(while,for,forin)
+
+// Canvas	 
+	  * 1. 在body里面创建一个canvas标签
+	  * 2. 在script里面找到canvas标签 var canvas = document.getElementsByTagName('canvas')[0] 
+	  * 3. 给script设置宽高 	canvas.width canvas.height
+	  * 4. var cat = canvas.getContext('2d')
+
+		// cat.beginPath()     		 	//分开每一个画布
+		// cat.moveTo(100,100) 			//开始
+		// cat.lineTo(200,200)			//过程
+		// cat.lineTo(100,300)
+
+		// cat.closePath()      		//自动连接开始和结束
+		// cat.strokeStyle = "red"	 	//边框颜色
+		// cat.lineWidth = 5;   	 	//改变颜色的粗细
+		// cat.fillStyle = "yellow"		 //填充背景颜色
+
+		// cat.stroke()         		//展示在画布上
+		// cat.fill() 					//允许填充背景颜色
+	
+// 鼠标事件	
+		* onmousedown 鼠标按下事件
+
+		* onmousemove  当鼠标在元素上移动 只要在绑定的元素里面每次都会触发事件
+						一般都会用 window.onmousemove 和  body.onmousemove 和 node 绑定
+
+		* onmouseup   鼠标松开
+
+		* onclick      当用户单击时  单击时会触发事件对象
+
+		* onmouseover  当鼠标经过时  每次经过只触发一次
+
+		* onmouseout   当鼠标离开时  每次出来只触发一次
+
+		* onmouseenter 当鼠标经过时
+
+		* onmouseleave 当鼠标离开时
+
+	 
+	// 鼠标的事件对象
+		* offsetX offsetY 比 clientX clientY 少一像素
+		* clientX clientY
+		 canvas.onmousemove = function(e){ var x = e.clientX  var y = e.clientY}
+
+
+
+// 键盘事件
+
+	 * onkeydown 当键盘按下时
+
+	 * onkeyup 当键盘按键抬起时触发该事件
+
+	 * onkeypress 当键盘按下时(忽略功能键)
+
+	 * onchange 当域内容发生改变时
+
+	// 键盘事件对象	
+
+  	 * keyCode  	常常被绑定在window对象上,但有一些表单元素也会被绑定该事件
+
+		window.onkeydown  = function(e){
+			var x =	e.keyCode
+			console.log(x)
+		}
+
+ // 事件委托
+ 	* 将事件委托给父级节点来做,利用事件对象的target属性
+ 	* 返回点击的nade节点
+ 	* 绑定给父级，点击父级里面的子级也能获得nade节点
+		canvas.onclick = function(e){
+			var x =	e.target
+			console.log(x)
+		}
+		点击后返回的值
+		<canvas width="100" height="100">绘制图片</canvas>
+	*使用场景
+		当元素不是页面加载完毕之后就存在的元素，还要为该元素绑定事件，那么根据JS执行时序的原则来说，该节点错过了被绑定事件的时机。
+		当某个节点数量过于庞大时，那么绑定事件的操作比较消耗客户端性能，如果使用事件委托技术，则可以将大量的绑定事件操作缩减成一次。
+
+//::selection 选中时的样式	{background-color: }	
+
+
+//node
+	* 全局 global
+	* 局部 process
+	*	var chunzi = require("http")
+		chunzi.createServer(function(request,reponse){
+
+			reponse.end("abcdefg")
+
+		}).listen(55777)
+		
+	//cmd
+	* netstat -na	所有的连接地址及端口
+	* ipconfig 查看到自己机器中所有连接的IP信息和MAC地址信息。
+	* require("http").createServer(function(requere,reponse){})
+				.get(dizhi,function(response){})
+
+	 **模块{
+
+	 	require("http").
+	 	require("url").
+
+	 	require("body-parser")
+	 	require("cookie-parser")
+		
+		require("jade") 后端模板引擎
+		
+		1.require("express").get/post/use("/aaa",function(request,response))
+				request(接受前端http://127.0.0.0.1:81?name="fuziting"&age=18){
+					request.query 带参数过来 {name:"fuziting",age:18;}
+				}
+				response(从后端反向页面){
+					*response
+					*response.send() >> 写的直接返回到页面(服务端)写的什么页面就展现什么
+					*response.end >> send+end >>一起执行
+				}
+				
+		2-require("fs")同步请求和异步请求{
+	 		fs.readFileSync("路径") 返回的是自己 (异步请求)
+	 			//读取数据 如果要发送给前端 转为String 或者 toString
+	 		fs.readFile  ("路径",function(error,data){console.log(data)}) 
+	 			//存入数据
+	 		fs.writeFile("存为什么类型",{要存入的内容},function(error){})
+	 	}
+		
+		3-解析{
+			*正解析  JSON.parse()      string -> json buffer ->json
+			*反解析  JSON.stringify()	json ->string
+			JSON.parse(jsonstr);                     //可以将json字符串转换成json对象 
+			JSON.stringify();               //可以将json对象转换成json对符串 
+		}
+
+		4-require("ejs")
+			ejs.readFile("路径",{},function(error,data){if(error){
+				console.log(error)
+				else{
+					response.end(data)
+				}
+				}}) //把后端数据往前端输入
+
+
+	 	5-express.use(express-static("路径")) //动态文件
+
+	 	6-express().listen(5577) //监听
+	 }
+	 //爬虫
+	 	1.http 2.fs
+	 	http.get(请求的网址（没有双引号）,function(response){
+	 		//读取的
+	 		response.on("data",function(data){
+	 			console.log(data)
+	 		}) 
+	 		//读完后
+	 		response.on("end",function(data){
+	 			fs.writeFile("存为什么类型",{要存入的内容},function(error){}) //存入..里
+	 		}) 
+	 	})
+ //数据库
+
+ 	1-配置数据库参数
+		var db = mysql.createConnection({
+			host:"localhost",		//数据库走的地址
+			user:"root",  		 //数据库账号
+			password:"!fzt18220908313",
+			database:"user" //数据库表的名字
+		})
+	2-链接数据库	
+		db.connect()
+
+	3-向数据库插入数据
+		db.query("INSERT INTO user (name,password) value ('nihao','123')",function(error,data){
+			var data = JSON.stringify(data)
+			if(error)
+				console.log(error)
+			else{
+				console.log(data)//返回ok插入成功
+			}
+		})
+
+	*通过变量查找	
+		var newUser = {name:Username,password:password}
+		db.query('INSERT INTO user_ set?',newUser,function(error,data){
+	        if(error){
+	         	console.log(error);
+	        }
+	        else{
+	        	console.log(Username+"注册成功")
+	        }  
+		});
+	
+	//增删查改数据库
+	// "SELECT * FROM userInfo" //获取文件下的所有数据库
+	//"INSERT INTO user (name,password) value ('fuziting','123')"//向数据库插入数据
+	//"UPDATE userInfo SET password='132' WHERE name='fuziitng' "  //修改密码
+
+//表单验证
+	 * <form action="http://127.0.0.1:55777/biaodian" method="post" >
+			<input type="text" name="username">
+			<input type="password" name="password">
+			<input type="submit"> //会找到离自己最近的form配合form发送请求
+		</form>
+
+
+	  <a href="/details?id=<%= Snumber %>">上一篇：关于<%= Stitle %></a>
+	        <a class="yi" href="/details?id=<%= Xnumber %>">下一篇：关于<%= Xtitle  %></a>
+
+//less
+		<script src="less.js"></script>
+		<link rel="stylesheet/less" href="style.less">
+//Angular
+	//ng-
+		 * ng-app = "test"               (父模块)定义angular的操作控件
+		 * ng-controller="MController"   (子模块)
+		 * ng-model="name"  			定义一个数据模型
+		 * ng-bind="name"				读取数据模型的内容
+		 * ng-repeat        (重复循环)
+		 * ng-show 			(显示)     ="true/false"
+		 * ng-hide			(隐藏)
+		 * ng-disabled      元素是否可用
+
+	 //ng事件指令
+		 * ng-click="clear()" (等同onclick)
+		 * ng-db1-click
+		 * ng-mousedown
+		 * ng-mouseup
+		 * ng-mouseenter
+		 * ng-mouseleave
+		 * ng-mousemove
+		 * ng-mouseover
+		 * ng-keydown
+		 * ng-keyup
+		 * ng-keypress
+		 * ng-change
+
+	 //<script src="angular.js"></script>引入在body结束标签之前
+
+		 * var mymodule = angular.module("test",["ngAnimate"]);
+
+		 //控制页面
+		 * mymodule.controller("MController",function($scope,$http){
+				$scope.age = 18
+				$scope.name = "傅紫婷"
+				$scope.clear = function(){
+				}
+				$http({})
+			})
+
+		//发送jajx请求
+		 *	$http({
+						url:"http://127.0.0.1:55777/index.html",
+						method:"GET"
+					}).then((response)=>{
+						console.log(response)
+					}(error)=>{
+						console.log(error)
+					})
+				})
+		//路由
+		  * var myapp = angular.module("myapp",["ngAnimate","ngRoute"]);
+		  * myapp.config(["$routeProvider",($routeProvider)=>{
+
+							$routeProvider.when("/details",{
+								// template:"我是首页"
+								templateUrl:"./web/details.html",
+								controller:"details"
+							})
+							$routeProvider.when("/page",{
+								// template:"我是子页"
+								templateUrl:"./web/page.html",
+								controller:"page"
+							})
+							//重定向
+							$routeProvider.otherwise({
+								redirectTo:"/details"
+							})
+						}])
+		  *	 myapp.controller("details",($scope)=>{
+				$scope.details= "首页"
+			})
+			myapp.controller("page",($scope)=>{
+				$scope.page= "page"
+			})	
+		//切换页面有相同的部分内容	
+		  * <ng-apphead></ng-apphead>
+		  *	 myapp.directive("apphead",[()=>{
+			 	return{
+			 		restrict:"AE",
+			 		templateUrl:"./web/head.html",
+			 		replace:true,
+			 		controller:footer
+			 	}
+			 }])
+		  *	myapp.controller("footer",($scope)=>{
+		 	* ng-class="jabstyle"  ng-click="clickon(jab)"
+		  	$scope.clickon = function(){
+		  		if(url === 'jab'){$scope.jabstyle = "focus"}
+				if(url === 'search'){$scope.searchstyle = "focus"}
+				if(url === 'my'){$scope.mystyle = "focus"}
+		  	}
+		  })
+		  
+		
+//vue
+	*vue
+		<script src="vue.js"></script>
+	* ajax请求引
+		<script src="axios.min.js"></script>
+	* router路由
+		<script src="vue-router.min.js"></script>
+	* 结合css配合vue	
+		<link rel="stylesheet" href="animate.min.css">
+	* 指令	
+		1- @click="shanchu(index)" v-on:click="shanchu(index)"
+		2- v-for="(i,index) in gamelist" 
+		3- <transition-group tag="ol" name="fade">
+				<li  v-for="(i,index) in gamelist" v-bind:key="i.gameId" >
+			</transition-group>
+
+		4- v-bind:key="i.gameId"
+		5- v-show="isShow"
+
+	* this 指向 箭头函数this.(data.xxx)
+	  this 指向 函数.Vue(data.xxx)
+	* 组件(必须放在Vue前面)
+	   //组件(buttonCounter名字可以用驼峰式写法调用必须用-)
+			Vue.component("button-counter",{
+					data:function(){
+						return{
+							number:0
+						}
+					},
+					methods:{
+						add:function(){
+							this.number++;
+						}
+					},
+					//获取页面
+						//props:["title","title"],
+						//<button-counter v-for="d in title" v-bind:title="d" ></button-counter>
+						//template:"<p>主题：{{title.name}}我是名字：{{title.age}}</p>"
+
+					template:"<button @click='add()'>点击{{number}}</button>"
+	   		 });
+	    <button-counter></button-counter>
+	* Vue一定得大写
+		new.Vue({
+			//那一块要用vue
+			el:"",
+			data:{
+				gamelist:[]
+			},
+			//放点击函数
+			methods:{
+				btn:function(){},
+				axios({
+							method:"get",
+							url:"http://127.0.0.1/gameList.json"
+						}).then((re)=>{
+							console.log(re.data)
+							this.gamelist = re.data
+						})
+			},
+	* 路由
+		router:new VueRouter({
+				routes:[
+					//重定向
+					{
+						path:'*',
+						redirect:'/one'
+					},
+					//跳转页面
+					{
+						path:'/one',
+						component:{template:"<div>第一页跳转恢复规划法规的活动活动符合规范化收到货后突然以后天天有人特一天</div>"}
+					},
+					{
+						path:'/two',
+						component:{template:"<div>第二页跳转回复等级哦后收购发短信给发的水电费水电费红烧豆腐的说法很多好地方</div>"}
+					}
+				]
+			})
+		})
+		//页面会解析成a标签
+		<router-link to="/one">第一页</router-link>
+		<router-link to="/two">第二页</router-link>
+		<a href="#/one">a标签做跳转</a>
+
+		//template内容要在页面出现的地方
+		<router-view></router-view>
+	
+	* 动画(配合)
+				/*显示*/
+			.slide-enter-active{
+				animation:bounceInLeft .5s;
+			}
+				/*消失*/
+			.slide-leave-active{
+				animation:rollOut .5s;
+			}

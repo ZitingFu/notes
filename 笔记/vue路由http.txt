@@ -1,0 +1,109 @@
+//路由：router
+	1.安装
+		npm install vue-router --save
+	2.在src->main.js里面->引入路由
+		import VueRouter from 'vue-router'  //引入路由模块
+	3.使用路由
+		Vue.use(VueRouter)
+	4.配置路由
+		const router = new VueRouter({
+			routes:[
+				{path:"/",component:Home},  //路由地址(跳转地址)
+				{path:"/HelloWorld",component:HelloWorld},
+				{path:"/Users",component:Users}
+			],
+			mode:"history"  //去掉跳转的#
+		})
+	5.把所有要跳转的页面引进来
+		import Home from './components/Home'
+		import Users from './components/Users'
+	6.展现出来
+		new Vue({
+		router,  //把路由展现出来
+		  el: '#app',      
+		  components: { App }, 
+		  template: '<App/>' 
+		})
+	7.在根组件App.vue页面展现出来
+		<router-view></router-view>
+	8.在根组件App.vue里面跳转
+		a 标签会重现加载页面，为了提高项目速度就用：
+			<router-link to="/HelloWorld">HelloWorld</router-link>
+			
+	 赋：路由有什么好处？
+		庸俗点说,可以不需要刷新页面就可以跳到对应的板块,性能好，
+		
+
+
+//vue-resource插件不跨域请求使用http:
+	1.安装：
+		npm install vue-resource --save-dev
+	2.在src->main.js里面->引入路由
+		import VueResource from 'vue-resource' 
+	3.使用路由
+		Vue.use(VueResource)
+	4.发送http get请求
+		created(){
+		  	this.$http.get("http://jsonplaceholder.typicode.com/posts")
+		  	.then((data)=>{
+		  		console.log(data)
+		  		this.Headss = data.body
+		  	})
+		}
+//子组件用父组件的数据
+	1.先引入到父组件
+		import Footer from './Footer'
+	2.注册组件	
+	components:{
+	  		"head0":Head,
+			"bannter":Bannter,
+	  		"center":Center,
+	  		"footer0":Footer
+	},
+	3.在父组件用
+		<footer0 v-bind:titles="title"></footer0>
+//子向辅组件传值
+	this.$emit('titlechang','子向辅组件传值')
+	父组件：
+	<head0 v-on:titlechang="updata($event)" v-bind:titles="title"></head0>
+	子向父级传值：
+	methods:{
+	  	updata(title0){
+	  		this.title = title0
+	  	}
+	 },
+//父组件向子组件传值
+	<center v-bind:Heads="Headss"></center>
+	props:{
+		Heads:{
+			type:Array, //类型
+			required:true
+		}
+		
+	},	
+	
+//生命周期图示
+	beforeCreate:function(){
+		alert("组件实例化之前要做的事情")
+	},
+	created:function(){
+		alert("组件实例化完毕，但页面还未显示")
+	},
+	beforeMount:function(){
+		alert("组件挂在前，页面仍未展示，但虚Dom已经配置")
+	},
+	mounted:function(){
+		alert("组件挂在后，此方法执行后，页面显示")
+	},
+	beforeUpdate:function(){
+		alert("组件更新前，页面仍未展示，但虚Dom已经配置")
+	},
+	Update:function(){
+		alert("组件更新，此方法执行后，页面显示")
+	},
+	beforeDestroy:function(){
+		alert("组件销毁前")
+	},
+	destroyed:function(){
+		alert("组件销毁")
+	} 

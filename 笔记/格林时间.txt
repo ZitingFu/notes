@@ -1,0 +1,15 @@
+// var dt = new Date;
+// dt.setMinutes( dt.getMinutes() + dt.getTimezoneOffset()+480 ); // 当前时间(分钟) + 时区偏移(分钟)
+// console.log( "格林尼治时间戳: ", dt.getTime());
+// console.log( "用本地时间格式显示: ", dt.toLocaleString());
+// console.log(dt.toLocaleString().split("下午"))
+//发布时间戳+截止时间-当前时间 = 认领期
+//截止时间{
+    //7天*86400
+    //3天*86400
+    //90天*86400
+//}
+
+
+console.log(Math.round(new Date() / 1000)) //秒
+console.log( "格林尼治时间戳: ", dt.getTime()); //毫秒

@@ -1,0 +1,40 @@
+//命令行 网址https://blog.csdn.net/cswhale/article/details/21012233?utm_source=blogxgwz8
+*ver
+	显示当前windows系统的版本号
+*start explorer d:\	
+	调用资源管理器打开f盘
+*cd ../..
+	返回上两级目录
+*cd test\test1\test2
+    进入当前目录下的test\test1\test2文件夹	
+*ls:
+	查看里面全部的文件
+*dir:
+	显示当前目录中的子文件夹与文件，还有创建日期
+*dir key*
+ 	显示当前目录下以key开头的文件和文件夹的信息	
+*cls:
+	清除屏幕
+*pwd:
+	当前所在位置
+
+*md:
+	创建目录
+*rd: css/s/q
+	删除空目录   /s: 是代表删除所有子目录跟其中的档案
+				/q: 是不要它在删除档案或目录时，不再问我 Yes or No 的动作。 
+				rmdir: /s/q d:\123\abc 
+				这意思是告诉计算机，把磁盘驱动器 D 的123资料夹里面的abc资料夹中的所有东西全部删除，同时也不要再问我是否要删除。			
+*touch:
+	创建一个test.c文件
+*del:
+	删除一个test.c文件
+				del /f test  删除当前目录下的test文件夹中的所有文件				
+*ren js js1
+	将当前目录下的js.重命名为js1		
+*type test.ini 
+   逐屏的显示当前目录下test.ini的文本内容
+*start /min calc.exe   
+   最小化的方式启动计算器	
+*mspaint
+	画板  	
