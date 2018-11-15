@@ -1,0 +1,45 @@
+1.安装
+	npm i element-ui -S
+2.引入	
+	import jquery from 'jquery'
+	import ElementUI from 'element-ui'
+	import 'element-ui/lib/theme-chalk/index.css'
+3.使用
+	Vue.use(ElementUI)
+	
+	
+//给后端form-data类型	
+	1.引入模块
+		main.js ->import queryString from 'query-string'
+	2.要请求的页面
+		import queryString from 'query-string'
+	3.使用
+	queryString.stringify：
+		let centen = {
+				name:'傅紫婷',
+				password:'4567895'
+			}
+			fetch("/apis/im/register",{
+	      method:"POST",
+	       headers: {
+	    		  "Content-Type": "application/x-www-form-urlencoded"
+	  		},
+	  		//form-data类型
+	       body:queryString.stringify(centen),
+	    }).then(result=>{
+	      //解析数据
+	      return result.json()
+	    }).then(data=>{
+	        console.log(data)
+	    })
+	    
+	JSON.stringify：
+		fetch("/apis/mini/question/info",{
+		  method:"POST",
+		   body:JSON.stringify({id:'268481447'})
+		 }).then(result=>{
+		    //解析数据
+		  console.log(result.json()) 
+		 })
+			
+		
