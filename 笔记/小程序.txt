@@ -1,0 +1,30 @@
+// 1.如何发送 res.code 到后台换取 openId, sessionKey, unionId
+  	wx.login({
+      success: res => {
+      // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        if(res.code){
+          wx.request({
+            url: 'https://qb.xluob.com/mini/passport/auth', //仅为示例，并非真实的接口地址
+            method: "POST",
+            data: {
+              code: res.code
+            },
+          success: function (res) {
+            console.log(res)
+            }
+          })
+        }
+      }
+    })
+ //2.如何从小程序获得微信手机
+ //小程序信息查看-》首先微信必须认证了
+ //html:
+	 // <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">点我获取手机号</button> 
+ // js:
+	Page({
+		getPhoneNumber (e) { 
+	    console.log(e.detail.errMsg) 
+	    console.log(e.detail.iv) 
+	    console.log(e.detail.encryptedData) 
+		},
+	})
