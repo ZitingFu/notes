@@ -1,0 +1,36 @@
+body {
+  font-size: 14px;
+  font-family: "Microsoft Yahei";
+  color: #333333;
+}
+body,div,p,h1,h2,h3,h4,h5,h6,ul,li {
+	margin: 0;
+	padding: 0;
+}
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+img {
+	vertical-align: bottom;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+.clearFix:after{
+ clear:both;
+ display:block;
+ visibility:hidden;
+ height:0;
+ line-height:0;
+ content:'';
+}
+.f-left {
+	float: left;
+}
+.f-right {
+	float: right;
+}
