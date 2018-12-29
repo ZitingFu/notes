@@ -1,0 +1,35 @@
+<!-- 小程序页面状态的变化 -->
+
+1.小程序页面状态的变化：假设现有A，B两页
+	<!-- 启动小程序，进入A时： -->
+	1）A页会触发onReady事件，onLoad事件，onShow事件；
+
+	<!-- 2、在展示A时，锁屏或最小化微信时： -->
+	1）A页会触发onHide事件
+
+	<!-- 3、解锁手机，回到锁屏前的微信小程序A或打开微信，回到小程序A时： -->
+	1）A页会触发onShow事件
+
+	<!-- 1）从A进入到B时， -->
+	    A页会触发onHide事件，【当前页被隐藏】；
+	    B页会触发onReady事件，onLoad事件，onShow事件；
+	    
+	<!-- 2）wx.navigateBack 从B回退到A时， -->
+	    A页会触发onShow事件，但不会触发onReady事件，onLoad事件；
+	    B页会触发onUnload事件【getCurrentPages()方法返回的路由历史已不存在B的记录】
+
+2.生命周期回调函数
+
+	onShow()
+	页面显示/切入前台时触发。
+
+	onReady()
+	页面初次渲染完成时触发。一个页面只会调用一次，代表页面已经准备妥当，可以和视图层进行交互。
+
+	注意：对界面内容进行设置的 API 如wx.setNavigationBarTitle，请在onReady之后进行。详见生命周期
+
+	onHide()
+	页面隐藏/切入后台时触发。 如 navigateTo 或底部 tab 切换到其他页面，小程序切入后台等。
+
+	onUnload()
+	页面卸载时触发。如redirectTo或navigateBack到其他页面时。
