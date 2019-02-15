@@ -1,0 +1,16 @@
+<!-- Vue -->
+   	打包		--buile 
+   	配置		--config
+   	后		--static
+   			--src 
+   				--app.vue 根组件
+   				--routes.js
+   				--main.js
+   				--views 视图
+   				--components 组件
+   				--widgets 部分一样
+   				--api 请求接口
+   				--style
+   				--js
+   				--assets 字体/img
+<!-- React -->

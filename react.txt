@@ -1,0 +1,34 @@
+React
+<!-- 1.安装npm 	npm -v 高于4.0 -->
+<!-- 2.安装node  node -v 高于 8.3 -->
+<!-- 3.npm 安装 create-react-app工具 -->
+                 全部安装：npm install -g create-react-app  
+    	
+                 react脚手架： create-react-app my-new-app     
+
+<!-- 安装依赖 -->
+			npm react-dom
+			npm init   （然后一路回车）
+            npm install --save react react-dom  ( 在该目录下导入react和react-dom）
+            npm install --save  react-router-dom   （react路由，以后会用到）
+<!-- webpack -->
+		npm install webpack -g 全局
+		npm install webpack@4.19.1 -g 指定版本
+<!-- 安装依赖 -->
+			npm install -g create-react-app 全局安装
+
+			create-react-app my-app     	创建项目
+
+			cd my-app     				进入项目
+
+			npm start      				启动项目
+<!-- 安装后文件内容 -->
+			--node_modules用于存放项目的依赖包，也就是构建这个React项目可能会用到的工具，
+
+            --public文件夹中是 index.html存放目录，也就是React根页面的所在地
+
+            --src中用于存放js文件，也就是项目开发中的主要区域
+
+            --package.json用于记录项目信息，以及外部依赖包的导入信息等
+
+            --json文件不能直接打开，需要用到文本编辑器，本人用的是VScode
