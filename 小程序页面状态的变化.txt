@@ -33,3 +33,38 @@
 
 	onUnload()
 	页面卸载时触发。如redirectTo或navigateBack到其他页面时。
+
+	================================
+			// 页面初次加载
+		    onLoad (){
+		        console.log("onLoad")
+		    },  
+		    // 页面初次渲染
+		    onReady (){
+		        console.log("onReady")
+		    },  
+		    // 切入后->前
+		    onShow (){
+		        console.log("onShow")
+		    },   
+		    // 切入页面->后
+		    onHide (){
+		        console.log("onHide")
+		    },
+		    //页面尺寸改变时
+		    onResize(res){
+		        console.log(res.size.windowWidth )
+		        console.log(res.size.windowHeight)
+		    },
+		    // 监听下拉动作
+		    onPullDownRefresh(){
+		        // 停止下拉动作
+		        wx.stopPullDownRefresh();
+		    }
+		    // 监听上拉 
+		    onReachBottom
+		    // 右上角转发
+		    onShareAppMessage
+		    // 滚动触发事件
+		    onPageScroll
+    ================================
